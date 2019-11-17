@@ -49,13 +49,12 @@ def get_xy(house_html):
 
 
 def run():
-    cities = ["hui", "nb"]
-    for city in cities:
+    cities = ["hz", "cd", "bj", "sh", "hui", "nb"]
+    maxpage = [100, 100, 100, 100, 100, 100]
+    for city, maxpagei in zip(cities, maxpage):
         house_data = pd.DataFrame(columns=("name", "month_price", "house_structure", "area", "x", "y"))
-        csv_path = "./lianjia/lianjia_rent/rent_lianjia_" + city + ".csv"
-        if os.path.exists(csv_path):
-            house_data = pd.read_csv(csv_path, index_col="id")
-        for page_id in range(1, 101):
+        csv_path = "./data/rent_lianjia_" + city + ".csv"
+        for page_id in range(1, maxpagei):
             url = "https://" + city + ".lianjia.com/zufang/pg" + str(page_id)
             try:
                 html = get_html(url)
