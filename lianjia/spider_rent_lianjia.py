@@ -37,8 +37,11 @@ def get_price(house_html):
 
 def get_info(hosue_html):
     soup = BeautifulSoup(hosue_html)
-    info_soup = soup.find(attrs={"class": "content__aside__list"}).find_all("span")
-    return info_soup[1].text.strip(), float(info_soup[2].text.strip().replace("㎡", ""))
+    info_soup = soup.find(attrs={"class": "content__aside__list"}).find_all("li")
+    info_str = info_soup[1].text.split("：")[-1].split(" ")
+    structure = info_str[0]
+    area = float(info_str[1].strip().replace("㎡", ""))
+    return structure,area
 
 
 def get_xy(house_html):
