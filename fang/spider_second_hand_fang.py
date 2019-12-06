@@ -90,13 +90,11 @@ def get_data_row(href):
 
 
 def run():
-    cities = ["hz"]
-    # cities = ["huizhou"]
-    # cities = ["hz", "cd", "bj", "sh", "huizhou", "nb"]
+    cities = ["hz", "cd", "bj", "sh", "huizhou", "nb"]
     for city in cities:
         house_data = pd.DataFrame(columns=(
             "name", "type", "build_year", "year", "total_price", "average_price", "house_structure", "area", "x", "y"))
-        csv_path = "./fang/fang_second_hand/second_hard_house_fang_" + city + ".csv"
+        csv_path = "./data1207/second_hard_house_fang_" + city + ".csv"
         if os.path.exists(csv_path):
             house_data = pd.read_csv(csv_path, index_col=0)
         url_head = "https://" + city + ".esf.fang.com"

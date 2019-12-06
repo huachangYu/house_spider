@@ -102,8 +102,8 @@ def get_name(house_html):
 
 
 def run():
-    # cities = ["hz", "cd", "bj", "sh", "huizhou", "nb"]
-    cities = ["huizhou", "nb"]
+    cities = ["hz", "cd", "bj", "sh", "huizhou", "nb"]
+    page_nums = [26, 55, 32, 32, 16, 24]
     for city in cities:
         house_data = pd.DataFrame(columns=("name", "price", "x", "y", "house_type_num", "house_structure_area"))
         url_head = "https://" + city + ".58.com/xinfang/loupan/all/p"

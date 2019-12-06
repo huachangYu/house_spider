@@ -125,8 +125,8 @@ def get_build_year(html):
 
 
 def run():
-    # cities = ["hz", "cd", "bj", "sh", "huizhou", "nb"]
-    cities = [ "nb"]
+    cities = ["hz", "cd", "bj", "sh", "huizhou", "nb"]
+    page_nums = [30, 30, 30, 30, 30, 30]
     for ct in cities:
         house_data = pd.DataFrame(columns=(
             "name", "type", "build_year", "year", "total_price", "average_price", "house_structure", "area", "x", "y"))

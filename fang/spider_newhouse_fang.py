@@ -4,7 +4,6 @@ from bs4 import BeautifulSoup
 import pandas as pd
 import re
 import time
-import json
 import warnings
 
 warnings.filterwarnings("ignore")
@@ -107,10 +106,10 @@ def decode(str):
 
 
 def run():
-    cities = ["huizhou", "nb"]
-    page_nums = [17, 24]
+    cities = ["hz", "cd", "bj", "sh", "huizhou", "nb"]
+    page_nums = [22, 55, 32, 32, 16, 24]
     for city, page_num in zip(cities, page_nums):
-        file_path = "./fang/fang_newhouse/newhouse_fang_" + city + ".csv"
+        file_path = "./data1207/newhouse_fang_" + city + ".csv"
         house_data = pd.DataFrame(columns=("name", "price", "year", "x", "y", "house_type_num", "house_structure_area"))
         url_head = "https://" + city + ".newhouse.fang.com/house/s/b9"
         for page_id in range(1, page_num + 1):

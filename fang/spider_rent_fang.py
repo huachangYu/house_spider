@@ -96,17 +96,17 @@ def get_info_from_house_html(href):
 
 
 def run():
-    # cities = ["huizhou", "nb", "hz"]
-    cities = ["nb"]
-    for city in cities:
+    cities = ["hz", "cd", "bj", "sh", "huizhou", "nb"]
+    page_nums = [100, 100, 100, 100, 100, 100]
+    for ind,city in enumerate(cities):
         house_data = pd.DataFrame(columns=("name", "month_price", "house_structure", "area", "x", "y"))
-        csv_path = "./fang/rent/rent_fang_" + city + ".csv"
+        csv_path = "./data1207/rent_fang_" + city + ".csv"
         if os.path.exists(csv_path):
             house_data = pd.read_csv(csv_path, index_col=0)
         url_head = "https://" + city + ".zu.fang.com"
         if city == "bj":
             url_head = "https://zu.fang.com/"
-        for page_id in range(1, 101):
+        for page_id in range(1, page_nums[ind]+1):
             url = url_head + "/house/i3" + str(page_id) + "/"
             try:
                 html = get_redirect_html(url)
