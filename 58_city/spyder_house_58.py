@@ -5,6 +5,7 @@ import base64
 from fontTools.ttLib import TTFont
 import pandas as pd
 import re
+import time
 import json
 import warnings
 
@@ -148,7 +149,9 @@ def run():
                         "house_structure": get_house_structure(house_html), "area": get_aera(house_html), "x": xy[0],
                         "y": xy[1]}
                 except Exception:
+                    print(href)
                     print("error...")
+                    time.sleep(20)
                     continue
                 print(data_row)
                 house_data = house_data.append(data_row, ignore_index=True)
