@@ -67,8 +67,10 @@ def get_type(house_html):
 
 
 def run():
-    cities = ["hz", "cd", "bj", "sh", "hui", "nb"]
-    maxpage = [100, 100, 100, 100, 100, 100]
+    cities = ["bj", "sh", "hui", "nb"]
+    maxpage = [ 100, 100, 100, 100]
+    # cities = ["hz", "cd", "bj", "sh", "hui", "nb"]
+    # maxpage = [100, 100, 100, 100, 100, 100]
     for city,maxpagei in zip(cities,maxpage):
         house_data = pd.DataFrame(columns=(
             "name", "type", "build_year", "year", "total_price", "average_price", "house_structure", "area", "x", "y"))

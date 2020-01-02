@@ -78,7 +78,7 @@ def get_year(house_html):
 
 def run():
     cities = ["hz", "cd", "bj", "sh", "hui", "nb"]
-    maxpage = [41, 84, 21, 82, 24, 24]
+    maxpage = [100, 100, 21, 100, 39, 35]
     for city, max_pageid in zip(cities, maxpage):
         house_data = pd.DataFrame(columns=("name", "price", "year", "x", "y", "house_type_num", "house_structure_area"))
         csv_path = "./data/newhouse_lianjia_new_" + city + ".csv"

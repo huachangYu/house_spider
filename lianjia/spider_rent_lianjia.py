@@ -52,8 +52,10 @@ def get_xy(house_html):
 
 
 def run():
-    cities = ["hz", "cd", "bj", "sh", "hui", "nb"]
-    maxpage = [100, 100, 100, 100, 100, 100]
+    cities = ["hui", "nb"]
+    maxpage = [100, 100]
+    # cities = ["hz", "cd", "bj", "sh", "hui", "nb"]
+    # maxpage = [100, 100, 100, 100, 100, 100]
     for city, maxpagei in zip(cities, maxpage):
         house_data = pd.DataFrame(columns=("name", "month_price", "house_structure", "area", "x", "y"))
         csv_path = "./data/rent_lianjia_" + city + ".csv"
